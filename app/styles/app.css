@@ -1,3 +1,14 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    height: 100%
+}
+
+.ember-view {
+    height: 100%;
+}
+
 .App {
     text-align: center;
     background-image: url('../sentry-pattern.png');
