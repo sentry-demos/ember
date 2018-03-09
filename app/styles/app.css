@@ -1,6 +1,6 @@
 .App {
     text-align: center;
-    background-image: url('./public/sentry-pattern.png');
+    background-image: url('../sentry-pattern.png');
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
