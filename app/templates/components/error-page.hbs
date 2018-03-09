@@ -1,9 +1,15 @@
 <div class="App">
-{{#each errorList as |error|}}
-<li class="list-group-item" onclick={{action error.action}}>{{error.title}}
-  <h3>{{error.title}}</h3>
-  <p>{{error.description}}</p>
-</li>
-{{/each}}
+    <div className="App-header">
+        <img src="./sentry-glyph-black.png" class="App-logo" alt="logo" />
+        <h1>Sentry.io -  Sample Error Page</h1>
+    </div>
+    <ul class="center list-group">
+        {{#each errorList as |error|}}
+            <li class="list-group-item" onclick={{action error.action}}>{{error.title}}
+                <h3>{{error.title}}</h3>
+                <p>{{error.description}}</p>
+            </li>
+        {{/each}}
+    </ul>
 </div>
 
