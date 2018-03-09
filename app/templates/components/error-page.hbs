@@ -1,7 +1,8 @@
 
 <div class="App">
 {{#each errorList as |error|}}
-error: {{error}}
+{{error.text}}
+<button onclick={{action error.action}}>{{error.text}}</button>
 {{/each}}
 </div>
 
