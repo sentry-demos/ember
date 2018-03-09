@@ -1,5 +1,14 @@
 import Component from '@ember/component';
 
 export default Component.extend({
-    errorList: ["undefined"]
+    init() {
+        this._super(...arguments);
+        this.errorList = ['undefined']
+    },
+
+    actions: {
+        getErrorList() {
+            return this.get('errorList')
+        }
+    }
 });
