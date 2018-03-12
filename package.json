@@ -45,6 +45,7 @@
     "node": "^4.5 || 6.* || >= 7.*"
   },
   "dependencies": {
+    "raven-js": "^3.23.1",
     "watchman": "^1.0.0"
   }
 }
