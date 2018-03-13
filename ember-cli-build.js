@@ -11,6 +11,9 @@ module.exports = function(defaults) {
     sourcemaps: {
       enabled: true,
       extensions: ['js']
+    },
+    fingerprint: {
+      enabled: false
     }
   });
 
