@@ -5,6 +5,13 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     // Add options here
+    minifyJS: {
+      enabled: true
+    },
+    sourcemaps: {
+      enabled: true,
+      extensions: ['js']
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated
@@ -21,5 +28,6 @@ module.exports = function(defaults) {
   // along with the exports of each module as its value.
   app.import('node_modules/raven-js/dist/raven.js');
   app.import('node_modules/raven-js/dist/plugins/ember.js');
+  //app.options.minifyJS.enabled = true;
   return app.toTree();
 }; 
