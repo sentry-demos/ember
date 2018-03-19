@@ -15,8 +15,8 @@
     "lint:js": "eslint ./*.js app config lib server tests",
     "start": "ember serve",
     "test": "ember test",
-    "deploy": "RELEASE=`sentry-cli releases propose-version` ember serve"
-
+    "predeploy": "ember build",
+    "deploy": "make setup_release && RELEASE=`sentry-cli releases propose-version` ember serve"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
