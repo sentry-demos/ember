@@ -24,13 +24,14 @@ app.import('node_modules/raven-js/dist/plugins/ember.js');`
 4. Configure your Raven object in index.html, the entry point of your application, and should be between vendor.js and your-app.js. The following configuration example will set the DSN and the release version.
 
 
-`<script src="assets/vendor.js"></script>
+```
+<script src="assets/vendor.js"></script>
 <script>
   Raven.config('https://123234@sentry.io/1', {
-                release: EmberENV.release
+               release: EmberENV.release
                }).addPlugin(Raven.Plugins.Ember).install();
 </script>
-<script src="assets/your-app.js"></script>`
+<script src="assets/your-app.js"></script>```
 
 
 ### Deploying
