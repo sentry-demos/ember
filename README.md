@@ -18,8 +18,10 @@ That will add the Raven package to the [package.json](https://github.com/sentry-
 
 3. Import raven.js and ember.js to your [ember-cli-build.js](https://github.com/sentry-demos/ember/blob/master/ember-cli-build.js#L32-L33) file.
 
-`app.import('node_modules/raven-js/dist/raven.js');
-app.import('node_modules/raven-js/dist/plugins/ember.js');`
+```
+app.import('node_modules/raven-js/dist/raven.js');
+app.import('node_modules/raven-js/dist/plugins/ember.js');
+```
 
 4. Configure your Raven object in [index.html](https://github.com/sentry-demos/ember/blob/master/app/index.html#L21-L25), the entry point of your application, and should be between vendor.js and your-app.js. The following configuration example will set the DSN and the release version.
 
