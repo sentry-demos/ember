@@ -31,7 +31,8 @@ app.import('node_modules/raven-js/dist/plugins/ember.js');`
                release: EmberENV.release
                }).addPlugin(Raven.Plugins.Ember).install();
 </script>
-<script src="assets/your-app.js"></script>```
+<script src="assets/your-app.js"></script>
+```
 
 
 ### Deploying
