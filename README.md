@@ -3,56 +3,38 @@
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
 
-## Prerequisites
-
-You will need the following things properly installed on your computer.
-
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with npm)
-* [Ember CLI](https://ember-cli.com/)
-* [Google Chrome](https://google.com/chrome/)
-
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd ember-sentry-awesome`
-* `npm install`
+1. Install the Raven JS package by running the following command.
 
-## Running / Development
+`npm install raven-js --save`
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
+That will add the Raven package to the package.json file as a dependency.
 
-### Code Generators
+2. Install sentry-cli, a command line executable that connects to the Sentry API and manage some data for your projects.
 
-Make use of the many generators for code, try `ember help generate` for more details
+`npm install @sentry/cli`
 
-### Running Tests
 
-* `ember test`
-* `ember test --server`
+3. Import raven.js and ember.js to your ember-cli-build.js file.
 
-### Linting
+`app.import('node_modules/raven-js/dist/raven.js');
+app.import('node_modules/raven-js/dist/plugins/ember.js');`
 
-* `npm run lint:js`
-* `npm run lint:js -- --fix`
+4. Configure your Raven object in index.html, the entry point of your application, and should be between vendor.js and your-app.js. The following configuration example will set the DSN and the release version.
 
-### Building
 
-* `ember build` (development)
-* `ember build --environment production` (production)
+`<script src="assets/vendor.js"></script>
+<script>
+  Raven.config('https://123234@sentry.io/1', {
+                release: EmberENV.release
+               }).addPlugin(Raven.Plugins.Ember).install();
+</script>
+<script src="assets/your-app.js"></script>`
+
 
 ### Deploying
 
 This will build, create release, and deploy
 * `npm run deploy`
 
-
-## Further Reading / Useful Links
-
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
