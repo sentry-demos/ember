@@ -8,10 +8,7 @@ SENTRY_PROJECT=ember
 VERSION=`sentry-cli releases propose-version`
 PREFIX=dist/assets
 
-setup_release: create_release associate_commits upload_sourcemaps
-
-create_release:
-	sentry-cli releases -o $(SENTRY_ORG) new -p $(SENTRY_PROJECT) $(VERSION)
+setup_release:  upload sourcemaps associate_commits
 
 associate_commits:
 	sentry-cli releases -o $(SENTRY_ORG) -p $(SENTRY_PROJECT) set-commits --auto $(VERSION)
