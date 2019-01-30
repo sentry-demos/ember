@@ -18,11 +18,6 @@
     {{content-for "body"}}
 
     <script src="{{rootURL}}assets/vendor.js"></script>
-    <script>
-        Raven.config('https://083642f6753749ffb0eea864a7c2ed27@sentry.io/302369', {
-          release: EmberENV.release
-        }).addPlugin(Raven.Plugins.Ember).install();
-      </script>
     <script src="{{rootURL}}assets/ember-sentry-awesome.js"></script>
 
     {{content-for "body-footer"}}
